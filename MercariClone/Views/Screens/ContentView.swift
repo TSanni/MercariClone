@@ -12,6 +12,7 @@ import SwiftUI
 class AppStateManager: ObservableObject {
     @Published var tabSelection = 0
     @Published var signedIn = false
+    @Published var showFullScreenCover = false
 }
 
 
@@ -26,6 +27,8 @@ struct ContentView: View {
     }
 
     
+    
+    
     var body: some View {
         
         TabView(selection: $vm.tabSelection) {
@@ -37,31 +40,49 @@ struct ContentView: View {
                 Label("Home", systemImage: "house")
             }.tag(0)
             
-            FavoritesView().tabItem {
+            
+            NavigationView {
+                FavoritesView()
+            }
+            .tabItem {
                 Label("Favorites", systemImage: "heart")
             }
-            .tag(vm.signedIn ? 1 : 0)
+            .tag(1)
             
-            SellView().tabItem {
+            
+            NavigationView {
+                SellView()
+            }
+            .tabItem {
                 Label("Sell", systemImage: "menucard")
             }
-            .tag(vm.signedIn ? 2 : 0)
+            .tag(2)
             
             InboxView().tabItem {
                 Label("Inbox", systemImage: "bubble.middle.bottom.fill")
             }
-            .tag(vm.signedIn ? 3 : 0)
+            .tag(3)
             
             ProfileView().tabItem {
                 Label("Profile", systemImage: "person")
             }
-            .tag(vm.signedIn ? 4 : 0)
+            .tag(4)
 
         }
         .preferredColorScheme(.light)
         .tint(.black)
         .environmentObject(vm)
         .environmentObject(recommenedVM)
+        .onChange(of: vm.tabSelection) { newValue in
+            
+            if !vm.signedIn && vm.tabSelection != 2 && vm.tabSelection != 0 {
+                vm.showFullScreenCover = true
+                
+                vm.tabSelection = 0
+            }
+            
+            print("Tab selected: \(newValue)\n\n\n" )
+        }
     }
 }
 

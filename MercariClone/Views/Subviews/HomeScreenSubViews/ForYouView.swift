@@ -25,14 +25,18 @@ struct ForYouView: View {
                     VStack(alignment: .leading) {
                         
                         AsyncImage(url: URL(string: num.download_url)) { image in
-                            image.resizable().scaledToFit().frame(width: 120, height: 120)
+                            image.resizable().scaledToFit().frame(width: 125, height: 125)
                         } placeholder: {
                             //ProgressView()
                             Image(systemName: "photo").resizable().scaledToFit().frame(width: 120, height: 120)
                         }
                         //Text(num.id)
                         Text("$\(Int.random(in: 2...100))")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                        
                     }
+                    .shadow(radius: 1)
                     .padding(.bottom)
 
                 }

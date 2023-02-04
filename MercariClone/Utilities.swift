@@ -15,8 +15,24 @@ extension Color {
     }
     
     static var mercariGray: Color {
-        return Color(red: 0.803, green: 0.808, blue: 0.825)
+        return Color(red: 0.925, green: 0.929, blue: 0.947)
     }
     
     
+}
+
+
+
+
+
+//MARK: - Extension to enable swipe back even with custom navigation back button
+extension UINavigationController: UIGestureRecognizerDelegate {
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
+    }
 }

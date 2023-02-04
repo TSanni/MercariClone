@@ -13,18 +13,20 @@ struct FavoritesView: View {
     
     var body: some View {
         
+  
+        
         
         Text("Favorites go here")
-            .fullScreenCover(isPresented: $showFullCover) {
-                OnboardingView()
-            }
-            .onAppear {
-                if vm.signedIn {
-                    showFullCover = false
-                } else {
-                    showFullCover = true
-                }
-            }
+//            .fullScreenCover(isPresented: $vm.showFullScreenCover) {
+//                OnboardingView()
+//            }
+//            .onAppear {
+//                if vm.signedIn {
+//                    showFullCover = false
+//                } else {
+//                    showFullCover = true
+//                }
+//            }
         
     }
 }

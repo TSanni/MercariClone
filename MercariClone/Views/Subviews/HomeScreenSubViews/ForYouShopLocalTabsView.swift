@@ -18,6 +18,7 @@ struct ForYouShopLocalTabsView: View {
             Spacer()
             VStack {
                 Text("For you")
+                    .foregroundColor(tagGeometryEffect == 1 ? nil : .secondary)
                     .onTapGesture {
                         withAnimation(.spring()) {
                             tagGeometryEffect = 1
@@ -40,6 +41,7 @@ struct ForYouShopLocalTabsView: View {
             Spacer()
             VStack {
                 Text("Shop Local")
+                    .foregroundColor(tagGeometryEffect == 2 ? nil : .secondary)
                     .onTapGesture {
                         withAnimation(.spring()) {
                             tagGeometryEffect = 2

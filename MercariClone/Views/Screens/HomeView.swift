@@ -11,6 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var vm: RecommendedViewMdel
+    @EnvironmentObject var appState: AppStateManager
 
     @State private var searchText: String = ""
     @State private var tagGeometryEffect = 1
@@ -33,6 +34,7 @@ struct HomeView: View {
                     searchText = ""
                 } label: {
                     Image(systemName: "chevron.left")
+                        .contentShape(Rectangle())
                 }
                 .padding(.horizontal, 5)
                 .tint(colorScheme == .light ? .black : .white)
@@ -52,7 +54,7 @@ struct HomeView: View {
                             EmptyView()
                         } else {
                             Image(systemName: "magnifyingglass")
-                                .transition(AnyTransition.move(edge: .trailing))
+                                .transition( AnyTransition.move(edge: .trailing).combined(with: .opacity) )
                         }
 
 
@@ -114,26 +116,27 @@ struct HomeView: View {
             
             if !showSearchScreen {
                 ForYouShopLocalTabsView(tagGeometryEffect: $tagGeometryEffect)
-//                forYouAndShopLocalTabs
                 
                 if tagGeometryEffect == 1 {
-//                    forYouScrollViewContent
                     ForYouView()
                         .transition(.move(edge: .leading))
                 } else {
-//                    shopLocalScrollViewContent
                     ShopLocalView()
                         .transition(.move(edge: .trailing))
                 }
             } else {
                 SearchingView(searchText: $searchText, focus: _searchInFocus)
-                    .transition(.scale)
+                    .transition(.opacity)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .onAppear { searchInFocus = true }
             }
 
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .animation(.easeInOut(duration: 0.2), value: searchInFocus)
+        .fullScreenCover(isPresented: $appState.showFullScreenCover) {
+            OnboardingView()
+        }
 
         
     }
@@ -145,17 +148,21 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
             .previewDevice("iPhone 11 Pro Max")
             .environmentObject(RecommendedViewMdel())
+            .environmentObject(AppStateManager())
         HomeView()
             .previewDevice("iPhone 13 Pro Max")
             .environmentObject(RecommendedViewMdel())
+            .environmentObject(AppStateManager())
 
         HomeView()
             .previewDevice("iPad Pro (12.9-inch) (6th generation)")
             .environmentObject(RecommendedViewMdel())
+            .environmentObject(AppStateManager())
 
         HomeView()
             .previewDevice("iPhone SE (3rd generation)")
             .environmentObject(RecommendedViewMdel())
+            .environmentObject(AppStateManager())
 
 
     }

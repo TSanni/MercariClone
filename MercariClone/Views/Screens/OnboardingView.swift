@@ -66,7 +66,7 @@ struct OnboardingView: View {
                             }
                             
                             NavigationLink {
-                                EmailSMSSignUpView()
+                                EmailSMSSignUpView(loggingIn: false)
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
@@ -83,11 +83,14 @@ struct OnboardingView: View {
                         HStack {
                             Text("Already have an account? ")
                             
-                            Button("Log in") {
-                                
+                            NavigationLink {
+                                EmailSMSSignUpView(loggingIn: true)
+                            } label: {
+                                Text("Log in")
                             }
                             .tint(Color.mercariPurple)
                             .fontWeight(.semibold)
+
                         }
                         .offset(y: 30)
                         
@@ -111,9 +114,11 @@ struct OnboardingView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         dismiss()
-                        vm.tabSelection = 0
+//                        vm.tabSelection = 0
                     } label: {
                         Image(systemName: "xmark")
+                            .frame(width: 30, height: 30)
+                            .contentShape(Rectangle())
 
                     }
                     .tint(Color.black)

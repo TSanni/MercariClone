@@ -9,19 +9,23 @@ import SwiftUI
 
 
 
+
 struct EmailSMSSignUpView: View {
     @State private var email = ""
     @State private var displayName = ""
+    @State private var password = ""
     @FocusState private var emailFocus: Bool
     @FocusState private var displayNameFocus: Bool
+    @FocusState private var passwordFocus: Bool
     @Environment(\.dismiss) var dismiss
     
+    let loggingIn: Bool
     
-
+    
     
     //MARK: - Main view
     var body: some View {
-        ZStack(alignment:.bottomTrailing) {
+        ZStack(alignment: .bottomTrailing) {
             ScrollView {
                 VStack(alignment: .leading) {
                     
@@ -34,6 +38,13 @@ struct EmailSMSSignUpView: View {
                             .keyboardType(.emailAddress)
                             .tint(.mercariPurple)
                             .focused($emailFocus)
+                            .onSubmit {
+                                emailFocus = false
+                                
+                                if loggingIn { passwordFocus = true } else {
+                                    displayNameFocus = true
+                                }
+                            }
                         RoundedRectangle(cornerRadius: 0)
                             .frame(height: 2)
                             .foregroundColor(emailFocus ? .mercariPurple : blankOrValidEmail(email: email) ? .secondary : .red)
@@ -45,25 +56,45 @@ struct EmailSMSSignUpView: View {
                         }
                     }.padding(.bottom)
                     
-
                     
                     VStack(alignment: .leading) {
-                        Text("Display name")
-                             .foregroundColor(blankOrValidDisplayName(displayname: displayName) ? nil : displayNameFocus ? nil : .red)
-                             .fontWeight(.semibold)
-                         TextField("3-20 character display name", text: $displayName)
-                             .keyboardType(.emailAddress)
-                             .tint(.mercariPurple)
-                             .focused($displayNameFocus)
-                         RoundedRectangle(cornerRadius: 0)
-                             .frame(height: 2)
-                             .foregroundColor(displayNameFocus ? .mercariPurple : blankOrValidDisplayName(displayname: displayName) ? .secondary : Color.red)
-                         
-                         if !displayNameFocus && !blankOrValidDisplayName(displayname: displayName) {
-                             Text("Display name must be 3-20 characters")
-                                 .foregroundColor(.red)
-                                 .font(.footnote)
-                         }
+                        
+                        if loggingIn {
+                            Text("Password")
+                                .foregroundColor(blankOrValidPassword(password: password) ? nil : passwordFocus ? nil : .red)
+                                .fontWeight(.semibold)
+                            SecureField("", text: $password)
+                                .keyboardType(.emailAddress)
+                                .tint(.mercariPurple)
+                                .focused($passwordFocus)
+                            RoundedRectangle(cornerRadius: 0)
+                                .frame(height: 2)
+                                .foregroundColor(passwordFocus ? .mercariPurple : blankOrValidPassword(password: password) ? .secondary : Color.red)
+                            
+                            if !passwordFocus && !blankOrValidPassword(password: password) {
+                                Text("Invalid password")
+                                    .foregroundColor(.red)
+                                    .font(.footnote)
+                            }
+                        } else {
+                            
+                            Text("Display name")
+                                .foregroundColor(blankOrValidDisplayName(displayname: displayName) ? nil : displayNameFocus ? nil : .red)
+                                .fontWeight(.semibold)
+                            TextField("3-20 character display name", text: $displayName)
+                                .keyboardType(.emailAddress)
+                                .tint(.mercariPurple)
+                                .focused($displayNameFocus)
+                            RoundedRectangle(cornerRadius: 0)
+                                .frame(height: 2)
+                                .foregroundColor(displayNameFocus ? .mercariPurple : blankOrValidDisplayName(displayname: displayName) ? .secondary : Color.red)
+                            
+                            if !displayNameFocus && !blankOrValidDisplayName(displayname: displayName) {
+                                Text("Display name must be 3-20 characters")
+                                    .foregroundColor(.red)
+                                    .font(.footnote)
+                            }
+                        }
                     }
                     
  
@@ -73,7 +104,7 @@ struct EmailSMSSignUpView: View {
             
             
             NavigationLink {
-                MakePassWordView()
+                MakePasswordView()
             } label: {
                 Text("Next")
                     .fontWeight(.bold)
@@ -101,10 +132,7 @@ struct EmailSMSSignUpView: View {
         .onAppear {
             emailFocus = true
         }
-        
-        
-
-
+  
     }
     
     
@@ -140,14 +168,23 @@ struct EmailSMSSignUpView: View {
             return false
         }
     }
+    
+    func blankOrValidPassword(password: String) -> Bool {
+        
+        if password.isEmpty { return true }
+        
+        if password.count < 5 { return false } else {
+            return true
+        }
+    }
 }
 
 
 
 
 
-
-struct MakePassWordView: View {
+//MARK: - MakePasswordView
+struct MakePasswordView: View {
     @State private var password: String = ""
     @FocusState var passwordFocus: Bool
     var body: some View {
@@ -197,7 +234,7 @@ struct MakePassWordView: View {
 struct EmailSMSSignUpView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            EmailSMSSignUpView()
+            EmailSMSSignUpView(loggingIn: true)
         }
     }
 }

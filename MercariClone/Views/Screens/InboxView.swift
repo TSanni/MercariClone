@@ -15,16 +15,16 @@ struct InboxView: View {
     var body: some View {
         
         Text("Inbox goes here")
-            .fullScreenCover(isPresented: $showFullCover) {
-                OnboardingView()
-            }
-            .onAppear {
-                if vm.signedIn {
-                    showFullCover = false
-                } else {
-                    showFullCover = true
-                }
-            }
+//            .fullScreenCover(isPresented: $showFullCover) {
+//                OnboardingView()
+//            }
+//            .onAppear {
+//                if vm.signedIn {
+//                    showFullCover = false
+//                } else {
+//                    showFullCover = true
+//                }
+//            }
         
     }
 }

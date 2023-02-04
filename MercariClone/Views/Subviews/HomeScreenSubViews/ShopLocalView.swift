@@ -40,12 +40,12 @@ struct ShopLocalView: View {
             ScrollView(.vertical) {
                 
                 Group {
-                    LocalDealType(name: "Limited-time deals", itemTag: "10% OFF")
-                    LocalDealType(name: "Only for local shoppers", itemTag: "LOCAL")
-                    LocalDealType(name: "Home Decor", itemTag: "LOCAL")
-                    LocalDealType(name: "Electronics", itemTag: "LOCAL")
-                    LocalDealType(name: "Last-minute gifts", itemTag: "LOCAL")
-                    LocalDealType(name: "Sports and outdoors", itemTag: "LOCAL")
+                    SaleType(name: "Limited-time deals", itemTag: "10% OFF")
+                    SaleType(name: "Only for local shoppers", itemTag: "LOCAL")
+                    SaleType(name: "Home Decor", itemTag: "LOCAL")
+                    SaleType(name: "Electronics", itemTag: "LOCAL")
+                    SaleType(name: "Last-minute gifts", itemTag: "LOCAL")
+                    SaleType(name: "Sports and outdoors", itemTag: "LOCAL")
                 }
                 .padding(.horizontal)
                 
@@ -85,70 +85,4 @@ struct ShopLocalView_Previews: PreviewProvider {
     }
 }
 
-struct LocalDealType: View {
-    @EnvironmentObject var vm: RecommendedViewMdel
-    let rows = [GridItem(.fixed(120))]
-    let name: String
-    let itemTag: String //change this to use data from viewModel
-    
-    var body: some View {
-        HStack {
-            Text(name)
-                .fontWeight(.semibold)
-            Spacer()
-            Button {
-                
-            } label: {
-                Text("See all")
-                    .foregroundColor(Color.mercariPurple)
-            }
-            
-        }
-        .padding(.vertical)
-        
-        
-        //Scroll for limited time deals row
-        ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: rows) {
-                    ForEach(vm.recommendedItems) { num in
-                        GeometryReader { geo in
-                            ZStack(alignment: .topLeading) {
-                                VStack(alignment: .leading) {
-                                    //AsyncImage(url: URL(string: num.download_url))
-                                    
-                                    AsyncImage(url: URL(string: num.download_url)) { image in
-                                        image.resizable().scaledToFit()
-                                            .frame(width: 120, height: 120)
 
-                                    } placeholder: {
-                                        //ProgressView()
-                                        Image(systemName: "photo")
-                                            .resizable().scaledToFit()
-                                            .frame(width: 120, height: 120)
-                                    }
-                                                                    
-                                    //Text(num.id)
-                                    Text("$\(Int.random(in: 2...100))")
-                                }
-                                
-                                RoundedRectangle(cornerRadius: 3)
-                                    .fill(Color.mercariPurple)
-                                    .frame(width: geo.size.width * 0.5, height: geo.size.height * 0.15)
-//                                            .frame(width: 60, height: 25)
-                                    .overlay {
-                                        Text(itemTag)
-                                            .foregroundColor(.white)
-                                            .fontWeight(.semibold)
-                                            .minimumScaleFactor(0.5)
-                                            .padding(3)
-                                    }
-                            }
-                        }
-                        .frame(width: 120, height: 150)
-
-                    }
-                }
-            
-        }
-    }
-}

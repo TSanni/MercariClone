@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+//MARK: - Add this view modifier to any view that requires a custom back button
 struct CustomNavBackButton: ViewModifier {
     @Environment(\.dismiss) var dismiss
     func body(content: Content) -> some View {

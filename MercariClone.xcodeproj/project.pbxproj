@@ -14,6 +14,8 @@
 		8300A00B2979C258003D2F2B /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A00A2979C258003D2F2B /* CustomTextView.swift */; };
 		8300A00D297ADEB3003D2F2B /* SearchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A00C297ADEB3003D2F2B /* SearchingView.swift */; };
 		8300A012297B352C003D2F2B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A011297B352C003D2F2B /* FavoritesView.swift */; };
+		8344AAB8298C1A770067EE98 /* SaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344AAB7298C1A770067EE98 /* SaleType.swift */; };
+		8344AABA298C301A0067EE98 /* CapsuleGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344AAB9298C301A0067EE98 /* CapsuleGridView.swift */; };
 		8373F30E29762E6800CE97B8 /* MercariCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373F30D29762E6800CE97B8 /* MercariCloneApp.swift */; };
 		8373F31029762E6800CE97B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8373F30F29762E6800CE97B8 /* ContentView.swift */; };
 		8373F31229762E6A00CE97B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8373F31129762E6A00CE97B8 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		8300A00A2979C258003D2F2B /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		8300A00C297ADEB3003D2F2B /* SearchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingView.swift; sourceTree = "<group>"; };
 		8300A011297B352C003D2F2B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		8344AAB7298C1A770067EE98 /* SaleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleType.swift; sourceTree = "<group>"; };
+		8344AAB9298C301A0067EE98 /* CapsuleGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleGridView.swift; sourceTree = "<group>"; };
 		8373F30A29762E6800CE97B8 /* MercariClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercariClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8373F30D29762E6800CE97B8 /* MercariCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercariCloneApp.swift; sourceTree = "<group>"; };
 		8373F30F29762E6800CE97B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				83A21DFA2981B2F1005988BD /* SellView.swift */,
 				83A21DFC2981B2F9005988BD /* InboxView.swift */,
 				83A21DFE2981B302005988BD /* ProfileView.swift */,
+				83DED4D8297DC31D002A4827 /* CartView.swift */,
 				8300A0022978C3CF003D2F2B /* OnboardingView.swift */,
 			);
 			path = Screens;
@@ -105,8 +110,9 @@
 			children = (
 				8300A00A2979C258003D2F2B /* CustomTextView.swift */,
 				83A21E0229830EC9005988BD /* CustomNavBackButton.swift */,
-				83DED4D8297DC31D002A4827 /* CartView.swift */,
 				8300A0062979C174003D2F2B /* SignInWithAppleButtonCustom.swift */,
+				8344AAB7298C1A770067EE98 /* SaleType.swift */,
+				8344AAB9298C301A0067EE98 /* CapsuleGridView.swift */,
 				83A21DF52980BA82005988BD /* HomeScreenSubViews */,
 				83A21E0429830F28005988BD /* Onboarding Subviews */,
 			);
@@ -265,6 +271,7 @@
 				8300A0032978C3CF003D2F2B /* OnboardingView.swift in Sources */,
 				83A21E0B29845532005988BD /* RecommendedItemsModel.swift in Sources */,
 				8300A00B2979C258003D2F2B /* CustomTextView.swift in Sources */,
+				8344AABA298C301A0067EE98 /* CapsuleGridView.swift in Sources */,
 				8300A012297B352C003D2F2B /* FavoritesView.swift in Sources */,
 				8373F31029762E6800CE97B8 /* ContentView.swift in Sources */,
 				83A21DFD2981B2F9005988BD /* InboxView.swift in Sources */,
@@ -275,6 +282,7 @@
 				83A21E08298454EF005988BD /* RecommenedViewModel.swift in Sources */,
 				83A21DF92980BBA1005988BD /* Utilities.swift in Sources */,
 				83A21DFF2981B302005988BD /* ProfileView.swift in Sources */,
+				8344AAB8298C1A770067EE98 /* SaleType.swift in Sources */,
 				8300A00D297ADEB3003D2F2B /* SearchingView.swift in Sources */,
 				83A21DFB2981B2F1005988BD /* SellView.swift in Sources */,
 				8300A0072979C175003D2F2B /* SignInWithAppleButtonCustom.swift in Sources */,
