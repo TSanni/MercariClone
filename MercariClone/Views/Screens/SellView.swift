@@ -17,7 +17,8 @@ struct SellView: View {
         
         ScrollView(showsIndicators: true) {
             
-            
+
+
             VStack(alignment: .leading) {
                 
                 VStack(alignment: .leading) {
@@ -28,23 +29,33 @@ struct SellView: View {
                         HStack {
                             Text("easier than")
                             Text("ever").foregroundColor(.mercariPurple)
+//                                .overlay {
+//                                    PurpleUnderlineView()
+//                                        .stroke(lineWidth: 3)
+//                                        .foregroundColor(.mercariPurple)
+//                                        .frame(width: 100, height: 50)
+//                                        .rotationEffect(.degrees(180))
+//                                        .offset(x: 0, y: 35)
+//                                }
+                            
                         }
                          
                     }
                     .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .fontWeight(.semibold)
                     
                     
                     Button {
                         
                     } label: {
                         Text("Start listing now")
-                            .padding()
+                            .fontWeight(.medium)
+                            .padding(.horizontal)
+                            .padding(.vertical, 10)
                             .background(Color.mercariPurple)
                             .foregroundColor(.white)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                     }
-//                    .padding(.bottom, 30)
                     
                     SaleType(name: "Sold in the last 10 minutes", itemTag: "SOLD")
                 }

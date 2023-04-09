@@ -16,6 +16,11 @@ extension Color {
     
     static var mercariGray: Color {
         return Color(red: 0.925, green: 0.929, blue: 0.947)
+        
+    }
+    
+    static var goodBlack: Color {
+        return Color(red: 0.15, green: 0.15, blue: 0.15)
     }
     
     

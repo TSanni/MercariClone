@@ -108,13 +108,13 @@
 		8300A010297B33F9003D2F2B /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				83A21DF52980BA82005988BD /* HomeScreenSubViews */,
+				83A21E0429830F28005988BD /* Onboarding Subviews */,
 				8300A00A2979C258003D2F2B /* CustomTextView.swift */,
 				83A21E0229830EC9005988BD /* CustomNavBackButton.swift */,
 				8300A0062979C174003D2F2B /* SignInWithAppleButtonCustom.swift */,
 				8344AAB7298C1A770067EE98 /* SaleType.swift */,
 				8344AAB9298C301A0067EE98 /* CapsuleGridView.swift */,
-				83A21DF52980BA82005988BD /* HomeScreenSubViews */,
-				83A21E0429830F28005988BD /* Onboarding Subviews */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";

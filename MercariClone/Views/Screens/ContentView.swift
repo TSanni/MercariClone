@@ -11,6 +11,8 @@ import SwiftUI
 
 class AppStateManager: ObservableObject {
     @Published var tabSelection = 0
+    @Published var revertBackTab = 0
+
     @Published var signedIn = false
     @Published var showFullScreenCover = false
 }
@@ -75,10 +77,18 @@ struct ContentView: View {
         .environmentObject(recommenedVM)
         .onChange(of: vm.tabSelection) { newValue in
             
+            if newValue == 0 {
+                vm.revertBackTab = 0
+            }
+            
+            if newValue == 2 {
+                vm.revertBackTab = 2
+            }
+            
             if !vm.signedIn && vm.tabSelection != 2 && vm.tabSelection != 0 {
                 vm.showFullScreenCover = true
                 
-                vm.tabSelection = 0
+                vm.tabSelection = vm.revertBackTab
             }
             
             print("Tab selected: \(newValue)\n\n\n" )

@@ -14,7 +14,7 @@ struct ForYouView: View {
     var body: some View {
         ScrollView {
             Text("Recommended for you")
-                .font(.title2)
+                .font(.headline)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)

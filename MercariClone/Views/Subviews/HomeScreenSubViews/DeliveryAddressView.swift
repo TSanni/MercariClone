@@ -20,7 +20,7 @@ struct DeliveryAddressView: View {
                 TextField("", text: $zipCodeEntry)
                     .focused($focus)
                     .multilineTextAlignment(.center)
-                    .keyboardType(.decimalPad)
+                    .keyboardType(.numberPad)
                     .tint(.mercariPurple)
                 
                 Rectangle()

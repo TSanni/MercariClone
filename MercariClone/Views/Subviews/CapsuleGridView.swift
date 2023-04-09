@@ -28,12 +28,22 @@ struct CapsuleGridView: View {
         "Gaming",
         "Fandom"
     ]
+    
+    let randomImages = [
+        "cloud",
+        "headphones",
+        "tshirt.fill",
+        "shoeprints.fill",
+        "camera.fill",
+        "music.mic",
+        "eyeglasses"
+    ]
 
     var body: some View {
         VStack {
             HStack {
                 Text("Listing ideas")
-                    .fontWeight(.bold)
+                    .fontWeight(.medium)
                     .font(.title2)
                 Spacer()
                 Button {
@@ -47,50 +57,64 @@ struct CapsuleGridView: View {
             }
             .padding(.horizontal)
             
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 
                 VStack(alignment: .leading) {
                     HStack {
                         ForEach(0..<7) { _ in
-                            HStack {
-                                Image(systemName: "cloud")
-                                Text(randomText.randomElement()!)
+                            
+                            Button {
+                                
+                            } label: {
+                                HStack {
+                                    Image(systemName: randomImages.randomElement()!)
+                                    Text(randomText.randomElement()!)
+                                }
+                                .padding()
+                                .background(Color.mercariGray)
+                                .clipShape(Capsule())
                             }
-                            .padding()
-                            .background(Color.mercariGray)
-                            .clipShape(Capsule())
                         }
                     }
                     
                     HStack {
                         ForEach(0..<7) { _ in
-                            HStack {
-                                Image(systemName: "cloud")
-                                Text(randomText.randomElement()!)
+                            
+                            Button {
+                                
+                            } label: {
+                                HStack {
+                                    Image(systemName: randomImages.randomElement()!)
+                                    Text(randomText.randomElement()!)
+                                }
+                                .padding()
+                                .background(Color.mercariGray)
+                                .clipShape(Capsule())
                             }
-                            .padding()
-                            .background(Color.mercariGray)
-                            .clipShape(Capsule())
+                        }
+                    }
+                    
+                    HStack {
+                        ForEach(0..<7) { _ in
+                            
+                            Button {
+                                
+                            } label: {
+                                HStack {
+                                    Image(systemName: randomImages.randomElement()!)
+                                    Text(randomText.randomElement()!)
+                                }
+                                .padding()
+                                .background(Color.mercariGray)
+                                .clipShape(Capsule())
+                            }
                         }
                     }
                 }
+                .foregroundColor(.black)
                 .padding(.leading)
                 
                 
-//                LazyHGrid(rows: rows) {
-//                    ForEach(0..<21) { _ in
-//
-//
-//                        HStack {
-//                            Image(systemName: "cloud")
-//                            Text(randomText.randomElement()!)
-//                        }
-//                        .padding()
-//                        .background(Color.mercariGray)
-//                        .clipShape(Capsule())
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                    }
-//                }
             }
         }
     }
