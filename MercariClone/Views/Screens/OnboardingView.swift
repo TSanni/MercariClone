@@ -109,12 +109,17 @@ struct OnboardingView: View {
                     .frame(height: geo.size.height * 0.95)
                 }
                 .padding()
+                .onAppear {
+                    if vm.signedIn {
+                        dismiss()
+                    }
+                    print("ONBOARDING VIEW")
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         dismiss()
-//                        vm.tabSelection = 0
                     } label: {
                         Image(systemName: "xmark")
                             .frame(width: 30, height: 30)
@@ -126,6 +131,7 @@ struct OnboardingView: View {
                 }
             }
         }
+
     }
 }
 

@@ -11,38 +11,31 @@ struct SellView: View {
     @EnvironmentObject var vm: AppStateManager
     @State private var showFullCover = false
     
-    
     var body: some View {
-        
-        
+
         ScrollView(showsIndicators: true) {
             
-
-
             VStack(alignment: .leading) {
                 
                 VStack(alignment: .leading) {
                     
-                    VStack(alignment: .leading) {
-                        Text("Making money is")
-                        
-                        HStack {
-                            Text("easier than")
-                            Text("ever").foregroundColor(.mercariPurple)
-//                                .overlay {
-//                                    PurpleUnderlineView()
-//                                        .stroke(lineWidth: 3)
-//                                        .foregroundColor(.mercariPurple)
-//                                        .frame(width: 100, height: 50)
-//                                        .rotationEffect(.degrees(180))
-//                                        .offset(x: 0, y: 35)
-//                                }
+                    ZStack(alignment: .bottomTrailing) {
+                        VStack(alignment: .leading) {
+                            Text("Making money is")
+                            
+                            HStack {
+                                Text("easier than")
+                                Text("ever").foregroundColor(.mercariPurple)
+                            }
                             
                         }
-                         
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        
+                        CurveLine()
+                            .frame(width: 150, height: 50)
+                            .offset(x: 20, y: 35)
                     }
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
                     
                     
                     Button {
@@ -79,27 +72,14 @@ struct SellView: View {
 
             }
         }
-        
-        
-//        Text("Items to sell go here")
-//            .fullScreenCover(isPresented: $showFullCover) {
-//                OnboardingView()
-//            }
-//            .onAppear {
-//                if vm.signedIn {
-//                    showFullCover = false
-//                } else {
-//                    showFullCover = true
-//                }
-//            }
     }
 }
 
 struct SellView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+//        NavigationView {
             SellView()
                 .environmentObject(RecommendedViewMdel())
-        }
+//        }
     }
 }

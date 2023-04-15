@@ -8,16 +8,6 @@
 import SwiftUI
 
 
-
-class AppStateManager: ObservableObject {
-    @Published var tabSelection = 0
-    @Published var revertBackTab = 0
-
-    @Published var signedIn = false
-    @Published var showFullScreenCover = false
-}
-
-
 struct ContentView: View {
     @StateObject var vm = AppStateManager()
     @StateObject var recommenedVM = RecommendedViewMdel()
@@ -28,9 +18,7 @@ struct ContentView: View {
         UITabBar.appearance().backgroundColor = UIColor.white
     }
 
-    
-    
-    
+
     var body: some View {
         
         TabView(selection: $vm.tabSelection) {
@@ -38,6 +26,7 @@ struct ContentView: View {
             NavigationView {
                 HomeView()
             }
+            .navigationViewStyle(.stack)
             .tabItem {
                 Label("Home", systemImage: "house")
             }.tag(0)
@@ -46,6 +35,7 @@ struct ContentView: View {
             NavigationView {
                 FavoritesView()
             }
+            .navigationViewStyle(.stack)
             .tabItem {
                 Label("Favorites", systemImage: "heart")
             }
@@ -55,6 +45,7 @@ struct ContentView: View {
             NavigationView {
                 SellView()
             }
+            .navigationViewStyle(.stack)
             .tabItem {
                 Label("Sell", systemImage: "menucard")
             }
@@ -79,19 +70,24 @@ struct ContentView: View {
             
             if newValue == 0 {
                 vm.revertBackTab = 0
+                print("Tab selected0: \(newValue)\n\n\n" )
+                return
             }
             
             if newValue == 2 {
                 vm.revertBackTab = 2
+                print("Tab selected2: \(newValue)\n\n\n" )
+                return
             }
             
             if !vm.signedIn && vm.tabSelection != 2 && vm.tabSelection != 0 {
                 vm.showFullScreenCover = true
-                
                 vm.tabSelection = vm.revertBackTab
+                print("NOT SIGNED IN")
+                print("Tab selected: \(newValue)\n\n\n" )
+                return
             }
             
-            print("Tab selected: \(newValue)\n\n\n" )
         }
     }
 }
@@ -100,5 +96,11 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewDevice("iPhone 11 Pro Max")
+        
+        ContentView()
+            .previewDevice("iPhone SE (3rd generation)")
+        
+        ContentView()
+            .previewDevice("iPad Pro (12.9-inch) (6th generation)")
     }
 }

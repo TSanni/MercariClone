@@ -64,11 +64,11 @@ struct HomeView: View {
                         .tint(.mercariPurple)
                     
 
+                    // if searchText is empty show empty view, otherwise, show xmark on right side of
+                    // search bar
                     if searchText.isEmpty {
                         EmptyView()
                     } else {
-                        
-                        
                         Button {
                             searchText = ""
                         } label: {
