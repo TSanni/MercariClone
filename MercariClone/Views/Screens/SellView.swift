@@ -77,9 +77,9 @@ struct SellView: View {
 
 struct SellView_Previews: PreviewProvider {
     static var previews: some View {
-//        NavigationView {
+        NavigationView {
             SellView()
                 .environmentObject(RecommendedViewMdel())
-//        }
+        }
     }
 }

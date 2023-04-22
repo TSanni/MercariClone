@@ -112,8 +112,10 @@ struct OnboardingView: View {
                 .onAppear {
                     if vm.signedIn {
                         dismiss()
+                        print("DISMISSING ONBOARDING VIEW")
                     }
                     print("ONBOARDING VIEW")
+
                 }
             }
             .toolbar {

@@ -23,7 +23,7 @@ struct ForYouView: View {
             LazyVGrid(columns: columns) {
                 ForEach(vm.recommendedItems) { num in
                     VStack(alignment: .leading) {
-                        
+                        //Imaging caching not available with picsum remote images 
                         AsyncImage(url: URL(string: num.download_url)) { image in
                             image.resizable().scaledToFit().frame(width: 125, height: 125)
                         } placeholder: {

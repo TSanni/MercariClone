@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var vm: RecommendedViewMdel
-    @EnvironmentObject var appState: AppStateManager
+//    @EnvironmentObject var appState: AppStateManager
 
     @State private var searchText: String = ""
     @State private var tagGeometryEffect = 1
@@ -134,9 +134,9 @@ struct HomeView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .animation(.easeInOut(duration: 0.2), value: searchInFocus)
-        .fullScreenCover(isPresented: $appState.showFullScreenCover) {
-            OnboardingView()
-        }
+//        .fullScreenCover(isPresented: $appState.showFullScreenCover) {
+//            OnboardingView()
+//        }
 
         
     }

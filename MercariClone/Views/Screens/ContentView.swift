@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject var vm = AppStateManager()
     @StateObject var recommenedVM = RecommendedViewMdel()
     
+    
     //Using this init to attempt to fix a bug where the tab bar
     //randomly becomes clear
     init() {
@@ -29,7 +30,8 @@ struct ContentView: View {
             .navigationViewStyle(.stack)
             .tabItem {
                 Label("Home", systemImage: "house")
-            }.tag(0)
+            }
+            .tag(0)
             
             
             NavigationView {
@@ -56,7 +58,11 @@ struct ContentView: View {
             }
             .tag(3)
             
-            ProfileView().tabItem {
+            
+            NavigationView {
+                ProfileView()
+            }
+            .tabItem {
                 Label("Profile", systemImage: "person")
             }
             .tag(4)
@@ -89,6 +95,10 @@ struct ContentView: View {
             }
             
         }
+        .fullScreenCover(isPresented: $vm.showFullScreenCover) {
+            OnboardingView()
+                .environmentObject(vm)
+        }
     }
 }
 
@@ -96,11 +106,17 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewDevice("iPhone 11 Pro Max")
+            .environmentObject(RecommendedViewMdel())
+            .environmentObject(AppStateManager())
         
         ContentView()
             .previewDevice("iPhone SE (3rd generation)")
+            .environmentObject(RecommendedViewMdel())
+            .environmentObject(AppStateManager())
         
         ContentView()
             .previewDevice("iPad Pro (12.9-inch) (6th generation)")
+            .environmentObject(RecommendedViewMdel())
+            .environmentObject(AppStateManager())
     }
 }

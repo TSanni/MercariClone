@@ -49,7 +49,7 @@ class CacheManager {
 class CacheViewModel: ObservableObject {
     @Published var startingImage: UIImage? = nil
     @Published var cachedImage: UIImage? = nil
-    let imageName: String = "steve-jobs"
+    let imageName: String = "facebookImage"
     let manager = CacheManager.instance
     
     init() {

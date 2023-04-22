@@ -147,6 +147,7 @@ extension EmailSMSSignUpView {
                         .padding()
                 }
             } else {
+                // Signing up
                 NavigationLink {
                     MakePasswordView(email: $email, displayName: $displayName)
                 } label: {
@@ -157,20 +158,6 @@ extension EmailSMSSignUpView {
                 }
             }
         }
-//        NavigationLink {
-//            if loggingIn {
-//                // Log in user and dismiss view
-//                EmptyView()
-//            } else {
-//                //
-//                MakePasswordView(email: $email, displayName: $displayName)
-//            }
-//        } label: {
-//            Text("Next")
-//                .fontWeight(.bold)
-//                .foregroundColor(.white)
-//                .padding()
-//        }
     }
     
 }
