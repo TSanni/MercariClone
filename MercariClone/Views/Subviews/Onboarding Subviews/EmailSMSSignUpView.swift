@@ -11,6 +11,7 @@ import SwiftUI
 
 
 struct EmailSMSSignUpView: View {
+    @StateObject private var viewModel = SignInEmailViewModel()
     @State private var email = ""
     @State private var displayName = ""
     @State private var password = ""
@@ -41,6 +42,7 @@ struct EmailSMSSignUpView: View {
                         .fill(disable ? Color.mercariGray : Color.mercariPurple)
                 }
         }
+        .environmentObject(viewModel)
         .padding()
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
@@ -138,8 +140,14 @@ extension EmailSMSSignUpView {
             if loggingIn {
                 Button {
                     // Log in with firebase then dismiss
-//                    appState.signedIn = true
-                    dismiss()
+                    viewModel.email = email
+                    viewModel.password = password
+                    Task {
+                        try await viewModel.signIn()
+                        appState.signedIn = true
+                        dismiss()
+                    }
+        
                 } label: {
                     Text("Log in")
                         .fontWeight(.bold)
@@ -150,6 +158,8 @@ extension EmailSMSSignUpView {
                 // Signing up
                 NavigationLink {
                     MakePasswordView(email: $email, displayName: $displayName)
+                        .environmentObject(viewModel)
+
                 } label: {
                     Text("Next")
                         .fontWeight(.bold)
@@ -218,9 +228,9 @@ extension EmailSMSSignUpView {
 
 struct EmailSMSSignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        //        NavigationView {
-        EmailSMSSignUpView(loggingIn: false)
-            .environmentObject(AppStateManager())
-        //        }
+        NavigationView {
+            EmailSMSSignUpView(loggingIn: false)
+                .environmentObject(AppStateManager())
+        }
     }
 }

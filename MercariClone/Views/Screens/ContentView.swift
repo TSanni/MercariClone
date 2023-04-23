@@ -72,6 +72,10 @@ struct ContentView: View {
         .tint(.black)
         .environmentObject(vm)
         .environmentObject(recommenedVM)
+        .onAppear {
+            let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
+            vm.signedIn = authUser == nil ? false : true
+        }
         .onChange(of: vm.tabSelection) { newValue in
             
             if newValue == 0 {

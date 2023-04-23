@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct MakePasswordView: View {
-    @StateObject private var viewModel = SignInEmailViewModel()
+    @EnvironmentObject var viewModel: SignInEmailViewModel
     @EnvironmentObject var appState: AppStateManager
     @State private var password: String = ""
     @Binding var email: String
@@ -96,6 +96,8 @@ extension MakePasswordView {
 
 struct MakePasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        MakePasswordView(email: .constant("1@2.com"), displayName: .constant("Tom"))
+        NavigationView {
+            MakePasswordView(email: .constant("1@2.com"), displayName: .constant("Tom"))
+        }
     }
 }

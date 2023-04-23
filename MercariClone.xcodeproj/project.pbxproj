@@ -43,6 +43,7 @@
 		83DED4D9297DC31D002A4827 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DED4D8297DC31D002A4827 /* CartView.swift */; };
 		83DED4DD297F2F4C002A4827 /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DED4DC297F2F4C002A4827 /* ForYouView.swift */; };
 		83DED4DF297F308B002A4827 /* ShopLocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DED4DE297F308B002A4827 /* ShopLocalView.swift */; };
+		83E864F329F4F92300335FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83E864F229F4F92300335FF8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		83DED4D8297DC31D002A4827 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		83DED4DC297F2F4C002A4827 /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		83DED4DE297F308B002A4827 /* ShopLocalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLocalView.swift; sourceTree = "<group>"; };
+		83E864F229F4F92300335FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		8373F30C29762E6800CE97B8 /* MercariClone */ = {
 			isa = PBXGroup;
 			children = (
+				83E864F229F4F92300335FF8 /* GoogleService-Info.plist */,
 				83A21E0C29845540005988BD /* Models */,
 				8300A00E297B3359003D2F2B /* Views */,
 				83A21E0929845509005988BD /* Viewmodels */,
@@ -284,6 +287,7 @@
 			files = (
 				8373F31529762E6A00CE97B8 /* Preview Assets.xcassets in Resources */,
 				8373F31229762E6A00CE97B8 /* Assets.xcassets in Resources */,
+				83E864F329F4F92300335FF8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
