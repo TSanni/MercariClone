@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-
+import GoogleSignIn
+import GoogleSignInSwift
 
 
 struct OnboardingView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var vm: AppStateManager
-    
+    @EnvironmentObject var authenticationViewModel: AuthenticationViewModel
     
     
     
@@ -35,6 +36,21 @@ struct OnboardingView: View {
                         Spacer()
                         
                         VStack {
+                            
+                            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)) {
+                                Task {
+                                    do {
+                                        try await authenticationViewModel.signInGoogle()
+                                        vm.signedIn = true
+                                        dismiss()
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
+                            }
+                            
+                            
+                            
                             Button {
                                 
                             } label: {
@@ -48,7 +64,6 @@ struct OnboardingView: View {
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 40, height: 40)
-                                            .foregroundColor(.red)
                                         Text("Continue with Facebook")
                                     }
                                 }
@@ -143,6 +158,7 @@ struct OnboardingView_Previews: PreviewProvider {
             OnboardingView()
                 .previewDevice("iPhone 11 Pro Max")
                 .environmentObject(AppStateManager())
+                .environmentObject(AuthenticationViewModel())
             
 //        }
     }

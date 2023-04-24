@@ -113,18 +113,18 @@ extension AuthenticationManager {
 
 //MARK: - Sign In SSO
 extension AuthenticationManager {
-//
-//    @discardableResult
-//    func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
-//        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
-//        return try await signIn(credential: credential)
-//    }
-//
-//    @discardableResult
-//    func signInWithApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
-//        let credential = OAuthProvider.credential(withProviderID: AuthProviderOption.apple.rawValue, idToken: tokens.token, rawNonce: tokens.nonce)
-//        return try await signIn(credential: credential)
-//    }
+
+    @discardableResult
+    func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
+        return try await signIn(credential: credential)
+    }
+
+    @discardableResult
+    func signInWithApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
+        let credential = OAuthProvider.credential(withProviderID: AuthProviderOption.apple.rawValue, idToken: tokens.token, rawNonce: tokens.nonce)
+        return try await signIn(credential: credential)
+    }
     
     func signIn(credential: AuthCredential) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(with: credential)
@@ -154,17 +154,17 @@ extension AuthenticationManager {
 
     }
     
-//    func linkGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
-//        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
-//        return try await linkCredential(credential: credential)
-//
-//    }
-//    
-//    func linkApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
-//        let credential = OAuthProvider.credential(withProviderID: AuthProviderOption.apple.rawValue, idToken: tokens.token, rawNonce: tokens.nonce)
-//        return try await linkCredential(credential: credential)
-//
-//    }
+    func linkGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel {
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
+        return try await linkCredential(credential: credential)
+
+    }
+    
+    func linkApple(tokens: SignInWithAppleResult) async throws -> AuthDataResultModel {
+        let credential = OAuthProvider.credential(withProviderID: AuthProviderOption.apple.rawValue, idToken: tokens.token, rawNonce: tokens.nonce)
+        return try await linkCredential(credential: credential)
+
+    }
     
     private func linkCredential(credential: AuthCredential) async throws -> AuthDataResultModel {
         guard let user = Auth.auth().currentUser else {

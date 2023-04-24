@@ -35,4 +35,8 @@ final class SignInEmailViewModel: ObservableObject {
         
         try await AuthenticationManager.shared.signInUser(email: email, password: password)
     }
+    
+    func signOut() async throws {
+        try AuthenticationManager.shared.signOut()
+    }
 }

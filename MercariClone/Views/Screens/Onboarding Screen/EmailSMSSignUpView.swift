@@ -11,7 +11,7 @@ import SwiftUI
 
 
 struct EmailSMSSignUpView: View {
-    @StateObject private var viewModel = SignInEmailViewModel()
+    @EnvironmentObject var viewModel: SignInEmailViewModel
     @State private var email = ""
     @State private var displayName = ""
     @State private var password = ""

@@ -9,10 +9,10 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @StateObject var vm = AppStateManager()
+    @StateObject var appState = AppStateManager()
     @StateObject var recommenedVM = RecommendedViewMdel()
-    
-    
+    @StateObject var signInUpViewModel = SignInEmailViewModel()
+    @StateObject var authenticationViewModel = AuthenticationViewModel()
     //Using this init to attempt to fix a bug where the tab bar
     //randomly becomes clear
     init() {
@@ -22,7 +22,7 @@ struct ContentView: View {
 
     var body: some View {
         
-        TabView(selection: $vm.tabSelection) {
+        TabView(selection: $appState.tabSelection) {
             
             NavigationView {
                 HomeView()
@@ -62,6 +62,8 @@ struct ContentView: View {
             NavigationView {
                 ProfileView()
             }
+            .environmentObject(signInUpViewModel)
+            .environmentObject(appState)
             .tabItem {
                 Label("Profile", systemImage: "person")
             }
@@ -70,38 +72,40 @@ struct ContentView: View {
         }
         .preferredColorScheme(.light)
         .tint(.black)
-        .environmentObject(vm)
+        .environmentObject(appState)
         .environmentObject(recommenedVM)
         .onAppear {
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
-            vm.signedIn = authUser == nil ? false : true
+            appState.signedIn = authUser == nil ? false : true
         }
-        .onChange(of: vm.tabSelection) { newValue in
+        .onChange(of: appState.tabSelection) { newValue in
             
             if newValue == 0 {
-                vm.revertBackTab = 0
+                appState.revertBackTab = 0
                 print("Tab selected0: \(newValue)\n\n\n" )
                 return
             }
             
             if newValue == 2 {
-                vm.revertBackTab = 2
+                appState.revertBackTab = 2
                 print("Tab selected2: \(newValue)\n\n\n" )
                 return
             }
             
-            if !vm.signedIn && vm.tabSelection != 2 && vm.tabSelection != 0 {
-                vm.showFullScreenCover = true
-                vm.tabSelection = vm.revertBackTab
+            if !appState.signedIn && appState.tabSelection != 2 && appState.tabSelection != 0 {
+                appState.showFullScreenCover = true
+                appState.tabSelection = appState.revertBackTab
                 print("NOT SIGNED IN")
                 print("Tab selected: \(newValue)\n\n\n" )
                 return
             }
             
         }
-        .fullScreenCover(isPresented: $vm.showFullScreenCover) {
+        .fullScreenCover(isPresented: $appState.showFullScreenCover) {
             OnboardingView()
-                .environmentObject(vm)
+                .environmentObject(appState)
+                .environmentObject(signInUpViewModel)
+                .environmentObject(authenticationViewModel)
         }
     }
 }

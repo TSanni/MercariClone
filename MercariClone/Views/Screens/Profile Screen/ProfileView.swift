@@ -7,8 +7,18 @@
 
 import SwiftUI
 
+//MARK: - Enum
+enum ProfileScreenNavigations {
+    case toListings
+    case toPurchases
+    case toSettings
+    case toHelpCenter
+}
+
+//MARK: - Main Profile Screen
 struct ProfileView: View {
-    @EnvironmentObject var vm: AppStateManager
+    @EnvironmentObject var appState: AppStateManager
+    @EnvironmentObject var signInUpViewModel: SignInEmailViewModel
     @State private var showFullCover = false
     
     
@@ -28,7 +38,6 @@ struct ProfileView: View {
             sellerBadgesSection
         }
         .toolbar {
-            
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
 
@@ -42,13 +51,14 @@ struct ProfileView: View {
                 } label: {
                     Image(systemName: "questionmark.bubble")
                         .foregroundColor(.black)
-
                 }
             }
         }
     }
 }
 
+
+//MARK: - Preivew
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -59,7 +69,7 @@ struct ProfileView_Previews: PreviewProvider {
 }
 
 
-
+//MARK: - Extension of Profile Screen
 extension ProfileView {
     private var userInfo: some View {
         HStack {
@@ -202,10 +212,12 @@ extension ProfileView {
     
     private var profileNavigations: some View {
         Group {
-            ProfileNavigations(image: "tag", name: "My listings", rotation: 270)
-            ProfileNavigations(image: "bag", name: "My purchases", rotation: 0)
-            ProfileNavigations(image: "gear", name: "Settings", rotation: 0)
-            ProfileNavigations(image: "questionmark.circle", name: "Help Center", rotation: 0)
+            ProfileNavigations(image: "tag", name: "My listings", rotation: 270, chosenNavigation: .toListings)
+            ProfileNavigations(image: "bag", name: "My purchases", rotation: 0, chosenNavigation: .toPurchases)
+            ProfileNavigations(image: "gear", name: "Settings", rotation: 0, chosenNavigation: .toSettings)
+                .environmentObject(signInUpViewModel)
+                .environmentObject(appState)
+            ProfileNavigations(image: "questionmark.circle", name: "Help Center", rotation: 0, chosenNavigation: .toHelpCenter)
             
         }
     }
@@ -232,54 +244,6 @@ extension ProfileView {
     }
 }
 
-struct ProfileNavigations: View {
-    let image: String
-    let name: String
-    let rotation: Double
-    
-    var body: some View {
-        VStack {
-            HStack {
-                
-                Image(systemName: image)
-                    .rotationEffect(Angle.degrees(rotation))
-                
-                Text(name)
-            }
-            .font(.title3)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(10)
-            
-            Divider()
 
-        }
-        
-    }
-}
 
-struct SellerBadgeItems: View {
-    let image: String
-    let nameFirst: String
-    let nameSecond: String
-    var body: some View {
 
-        VStack {
-            ZStack {
-                
-                Circle()
-                    .stroke(lineWidth: 1)
-                    .fill(Color.gray)
-                    .frame(width: 50, height: 50)
-                
-                Image(systemName: image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 30)
-            }
-            
-            Text(nameFirst)
-            Text(nameSecond)
-        }
-        .foregroundColor(.black.opacity(0.4))
-    }
-}
