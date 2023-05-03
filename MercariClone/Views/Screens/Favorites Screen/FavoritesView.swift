@@ -15,7 +15,6 @@ struct FavoritesView: View {
     @State private var searchText: String = ""
     
     @State private var showFirstTab = true
-    @Namespace var underline
 
     
     var body: some View {
@@ -34,11 +33,11 @@ struct FavoritesView: View {
                 } else {
                     if showFirstTab {
                         //Show likes view
-                        LikeOrSearchView(showSearchScreen: $showSearchScreen, image: "shippingbox.fill", imageDescription: "No liked items", details: "Like an item and we'll let you know when the price drops", prompt: "Find something you like", searchInFocus: _searchInFocus)
+                        CustomTabViewContent(showSearchScreen: $showSearchScreen, image: "shippingbox.fill", imageDescription: "No liked items", details: "Like an item and we'll let you know when the price drops", prompt: "Find something you like", searchInFocus: _searchInFocus)
                             .transition(.move(edge: .leading))
                     } else {
                         //Show saved searches
-                        LikeOrSearchView(showSearchScreen: $showSearchScreen, image: "bookmark", imageDescription: "Save a search", details: "Be the first to know when an item is listed at the perfect price", prompt: "Search for something", searchInFocus: _searchInFocus)
+                        CustomTabViewContent(showSearchScreen: $showSearchScreen, image: "bookmark", imageDescription: "Save a search", details: "Be the first to know when an item is listed at the perfect price", prompt: "Search for something", searchInFocus: _searchInFocus)
                             .transition(.move(edge: .trailing))
                     }
 

@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct LikeOrSearchView: View {
+struct CustomTabViewContent: View {
     @Binding var showSearchScreen: Bool
     let image: String
     let imageDescription: String
     let details: String
-    let prompt: String
+    let prompt: String?
     @FocusState var searchInFocus: Bool
 
 
@@ -37,7 +37,7 @@ struct LikeOrSearchView: View {
                 showSearchScreen = true
                 searchInFocus = true
             } label: {
-                Text(prompt)
+                Text(prompt ?? "")
                     .fontWeight(.semibold)
             }
             .tint(.mercariPurple)
@@ -54,6 +54,6 @@ struct LikeOrSearchView: View {
 
 struct LikesView_Previews: PreviewProvider {
     static var previews: some View {
-        LikeOrSearchView(showSearchScreen: .constant(false), image: "shippingbox.fill", imageDescription: "No liked items", details: "Like an item and we'll let you know when the price drops", prompt: "Find something you like")
+        CustomTabViewContent(showSearchScreen: .constant(false), image: "shippingbox.fill", imageDescription: "No liked items", details: "Like an item and we'll let you know when the price drops", prompt: "Find something you like")
     }
 }

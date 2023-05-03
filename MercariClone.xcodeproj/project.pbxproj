@@ -54,7 +54,7 @@
 		83E8651429F8C41600335FF8 /* HowMercariWorksCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8651329F8C41600335FF8 /* HowMercariWorksCards.swift */; };
 		83E8651829F925FD00335FF8 /* HowMercariWorksCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8651729F925FD00335FF8 /* HowMercariWorksCardsModel.swift */; };
 		83E8651A29F9549E00335FF8 /* EarningMoneyIsEasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8651929F9549E00335FF8 /* EarningMoneyIsEasyView.swift */; };
-		83EB11F02A01E41B00D0F32E /* LikeOrSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EB11EF2A01E41B00D0F32E /* LikeOrSearchView.swift */; };
+		83EB11F02A01E41B00D0F32E /* CustomTabViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EB11EF2A01E41B00D0F32E /* CustomTabViewContent.swift */; };
 		83EB11F22A0216C000D0F32E /* CustomTabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EB11F12A0216C000D0F32E /* CustomTabViews.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +104,7 @@
 		83E8651329F8C41600335FF8 /* HowMercariWorksCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMercariWorksCards.swift; sourceTree = "<group>"; };
 		83E8651729F925FD00335FF8 /* HowMercariWorksCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMercariWorksCardsModel.swift; sourceTree = "<group>"; };
 		83E8651929F9549E00335FF8 /* EarningMoneyIsEasyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningMoneyIsEasyView.swift; sourceTree = "<group>"; };
-		83EB11EF2A01E41B00D0F32E /* LikeOrSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeOrSearchView.swift; sourceTree = "<group>"; };
+		83EB11EF2A01E41B00D0F32E /* CustomTabViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewContent.swift; sourceTree = "<group>"; };
 		83EB11F12A0216C000D0F32E /* CustomTabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +158,7 @@
 				8300A00C297ADEB3003D2F2B /* SearchingView.swift */,
 				83DD90E42A00ADD900490586 /* ButtonStyles.swift */,
 				83EB11F12A0216C000D0F32E /* CustomTabViews.swift */,
+				83EB11EF2A01E41B00D0F32E /* CustomTabViewContent.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -272,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				8300A011297B352C003D2F2B /* FavoritesView.swift */,
-				83EB11EF2A01E41B00D0F32E /* LikeOrSearchView.swift */,
 			);
 			path = "Favorites Screen";
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				83A21DF42980B4A7005988BD /* ForYouShopLocalTabsView.swift in Sources */,
 				83DED4D9297DC31D002A4827 /* CartView.swift in Sources */,
 				83DED4DD297F2F4C002A4827 /* ForYouView.swift in Sources */,
-				83EB11F02A01E41B00D0F32E /* LikeOrSearchView.swift in Sources */,
+				83EB11F02A01E41B00D0F32E /* CustomTabViewContent.swift in Sources */,
 				83E864FE29F62A6D00335FF8 /* SignInAppleHelper.swift in Sources */,
 				83A21E08298454EF005988BD /* RecommenedViewModel.swift in Sources */,
 				83A21DF92980BBA1005988BD /* Utilities.swift in Sources */,
