@@ -20,7 +20,7 @@ struct FavoritesView: View {
     
     var body: some View {
      
-        VStack {
+        VStack(spacing: 0.0) {
             SearchBar(usingCart: false, showSearchScreen: $showSearchScreen, searchtext: $searchText, focus: _searchInFocus)
                 .padding(.top)
             

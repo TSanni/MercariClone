@@ -92,7 +92,7 @@ extension ProfileView {
                 
             }
             VStack(alignment: .leading, spacing: 5) {
-                Text("Tomas1096")
+                Text("Bob Smith")
                     .font(.headline)
                 Text("User ID: 1234567")
                     .font(.subheadline)

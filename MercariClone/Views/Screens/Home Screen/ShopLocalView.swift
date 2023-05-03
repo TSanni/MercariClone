@@ -33,6 +33,7 @@ struct ShopLocalView: View {
                     
                 }
                 .padding(.horizontal)
+                .padding(.top)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .tint(.black)

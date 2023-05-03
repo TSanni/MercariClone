@@ -21,7 +21,7 @@ struct CustomTabViews: View {
                 Spacer()
                 Text(tab1Name)
                     .foregroundColor(showFirstTab == true ? nil : .secondary)
-
+                    .padding(.vertical, 10)
                     .onTapGesture {
                         withAnimation {
                             showFirstTab = true
@@ -30,7 +30,7 @@ struct CustomTabViews: View {
                 Spacer()
                 Text(tab2Name)
                     .foregroundColor(showFirstTab == true ? .secondary : nil)
-
+                    .padding(.vertical, 10)
                     .onTapGesture {
                         withAnimation {
                             showFirstTab = false
@@ -38,7 +38,7 @@ struct CustomTabViews: View {
                     }
                 Spacer()
             }
-            .padding(.vertical, 5)
+//            .padding(.vertical, 5)
             
             ZStack {
                 Divider()

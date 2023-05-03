@@ -18,6 +18,7 @@ struct ForYouView: View {
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
+                .padding(.top)
             
             
             LazyVGrid(columns: columns) {

@@ -106,7 +106,7 @@ struct HomeView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(spacing: 0.0) {
             
             SearchBar(usingCart: true, showSearchScreen: $showSearchScreen, searchtext: $searchText, focus: _searchInFocus)
                 .padding(.top)
