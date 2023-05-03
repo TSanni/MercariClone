@@ -22,6 +22,8 @@ struct CustomTextView: View {
                     .foregroundColor(.mercariPurple)
                     .offset(y: letter % 2 == 0 ? -4 : 0)
             }
+            
+            
         }
     }
     

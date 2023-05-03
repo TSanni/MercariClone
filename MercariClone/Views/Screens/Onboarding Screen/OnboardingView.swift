@@ -37,7 +37,7 @@ struct OnboardingView: View {
                         
                         VStack {
                             
-                            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)) {
+                            Button {
                                 Task {
                                     do {
                                         try await authenticationViewModel.signInGoogle()
@@ -47,7 +47,38 @@ struct OnboardingView: View {
                                         print(error)
                                     }
                                 }
+
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke()
+                                        .fill(Color.gray)
+                                        .frame(maxWidth: .infinity)
+                                        .frame(height: 50)
+
+                                    HStack {
+                                        Image("google_icon")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 20, height: 20)
+                                        Text("Continue with Google")
+                                    }
+                                }
                             }
+                            .tint(.black)
+                            
+                            
+//                            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .wide, state: .normal)) {
+//                                Task {
+//                                    do {
+//                                        try await authenticationViewModel.signInGoogle()
+//                                        vm.signedIn = true
+//                                        dismiss()
+//                                    } catch {
+//                                        print(error)
+//                                    }
+//                                }
+//                            }
                             
                             
                             
@@ -55,15 +86,21 @@ struct OnboardingView: View {
                                 
                             } label: {
                                 ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
+                                    RoundedRectangle(cornerRadius: 5)
                                         .fill(Color.blue)
                                         .frame(maxWidth: .infinity)
                                         .frame(height: 50)
                                     HStack {
-                                        Image("facebookImage")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 40, height: 40)
+                                        ZStack {
+                                            Circle()
+                                                .fill(Color.white)
+                                                .frame(width: 30, height: 30)
+
+                                            Image("facebook_icon")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(width: 20, height: 20)
+                                        }
                                         Text("Continue with Facebook")
                                     }
                                 }
@@ -71,24 +108,30 @@ struct OnboardingView: View {
                             .tint(.white)
                             
                             Button {
-                                
-                            } label: {
-                                ZStack {
-                                    SignInWithAppleButtonCustom()
-                                        .frame(height: 50)
-                                        .frame(maxWidth: .infinity)
+                                Task {
+                                    do {
+                                        try await authenticationViewModel.signInApple()
+                                        vm.signedIn = true
+                                        dismiss()
+                                    } catch {
+                                        print(error)
+                                    }
                                 }
+                            } label: {
+                                SignInWithAppleButtonViewRepresentable(type: .default, style: .black)
+                                    .allowsHitTesting(false)
                             }
+                            .frame(height: 55)
                             
                             NavigationLink {
                                 EmailSMSSignUpView(loggingIn: false)
                             } label: {
                                 ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
+                                    RoundedRectangle(cornerRadius: 5)
                                         .fill(Color.mercariGray)
                                         .frame(maxWidth: .infinity)
                                         .frame(height: 50)
-                                    Text("Sign up with email + SMS")
+                                    Text("Continue with email")
                                         .foregroundColor(.black)
                                 }
                             }

@@ -23,6 +23,7 @@ struct SearchingView: View {
             
             if searchText.isEmpty {
                 VStack(spacing: 20) {
+                    Spacer()
                     Image(systemName: "magnifyingglass")
                         .resizable()
                         .scaledToFit()
@@ -33,7 +34,10 @@ struct SearchingView: View {
                     
                     Text("Find your next favorite thing")
                         .foregroundColor(.secondary)
+                    Spacer()
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
             }
             else {
                 VStack {
@@ -57,6 +61,6 @@ struct SearchingView: View {
 
 struct SearchingView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchingView(searchText: .constant("c"))
+        SearchingView(searchText: .constant(""))
     }
 }

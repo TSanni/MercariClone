@@ -19,6 +19,7 @@ struct MercariCloneApp: App {
                 ContentView()
             }
             .navigationViewStyle(.stack)
+            .preferredColorScheme(.light)
 
         }
     }

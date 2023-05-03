@@ -62,6 +62,7 @@ struct ContentView: View {
             NavigationView {
                 ProfileView()
             }
+            .navigationViewStyle(.stack)
             .environmentObject(signInUpViewModel)
             .environmentObject(appState)
             .tabItem {
@@ -70,7 +71,6 @@ struct ContentView: View {
             .tag(4)
 
         }
-        .preferredColorScheme(.light)
         .tint(.black)
         .environmentObject(appState)
         .environmentObject(recommenedVM)
@@ -82,13 +82,13 @@ struct ContentView: View {
             
             if newValue == 0 {
                 appState.revertBackTab = 0
-                print("Tab selected0: \(newValue)\n\n\n" )
+                print("Tab selected0: \(newValue)\n" )
                 return
             }
             
             if newValue == 2 {
                 appState.revertBackTab = 2
-                print("Tab selected2: \(newValue)\n\n\n" )
+                print("Tab selected2: \(newValue)\n" )
                 return
             }
             
@@ -96,7 +96,7 @@ struct ContentView: View {
                 appState.showFullScreenCover = true
                 appState.tabSelection = appState.revertBackTab
                 print("NOT SIGNED IN")
-                print("Tab selected: \(newValue)\n\n\n" )
+                print("Tab selected: \(newValue)\n" )
                 return
             }
             
@@ -116,6 +116,7 @@ struct ContentView_Previews: PreviewProvider {
             .previewDevice("iPhone 11 Pro Max")
             .environmentObject(RecommendedViewMdel())
             .environmentObject(AppStateManager())
+            .preferredColorScheme(.light)
         
         ContentView()
             .previewDevice("iPhone SE (3rd generation)")

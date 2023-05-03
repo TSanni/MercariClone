@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		8300A0032978C3CF003D2F2B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A0022978C3CF003D2F2B /* OnboardingView.swift */; };
 		8300A0052978F6E0003D2F2B /* DeliveryAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A0042978F6E0003D2F2B /* DeliveryAddressView.swift */; };
-		8300A0072979C175003D2F2B /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A0062979C174003D2F2B /* SignInWithAppleButtonCustom.swift */; };
-		8300A0092979C1A2003D2F2B /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A0082979C1A2003D2F2B /* SignInWithApple.swift */; };
 		8300A00B2979C258003D2F2B /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A00A2979C258003D2F2B /* CustomTextView.swift */; };
 		8300A00D297ADEB3003D2F2B /* SearchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A00C297ADEB3003D2F2B /* SearchingView.swift */; };
 		8300A012297B352C003D2F2B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300A011297B352C003D2F2B /* FavoritesView.swift */; };
@@ -39,7 +37,8 @@
 		83A21E0B29845532005988BD /* RecommendedItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A21E0A29845532005988BD /* RecommendedItemsModel.swift */; };
 		83A21E0E29845575005988BD /* LimitedTimeItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A21E0D29845575005988BD /* LimitedTimeItemsModel.swift */; };
 		83CC581029F397D10038DA36 /* SignInEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC580F29F397D10038DA36 /* SignInEmailViewModel.swift */; };
-		83DED4D7297DAFB1002A4827 /* CacheBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DED4D6297DAFB1002A4827 /* CacheBootcamp.swift */; };
+		83DD90E129FEBE1E00490586 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD90E029FEBE1E00490586 /* SearchBar.swift */; };
+		83DD90E52A00ADD900490586 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DD90E42A00ADD900490586 /* ButtonStyles.swift */; };
 		83DED4D9297DC31D002A4827 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DED4D8297DC31D002A4827 /* CartView.swift */; };
 		83DED4DD297F2F4C002A4827 /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DED4DC297F2F4C002A4827 /* ForYouView.swift */; };
 		83DED4DF297F308B002A4827 /* ShopLocalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DED4DE297F308B002A4827 /* ShopLocalView.swift */; };
@@ -52,13 +51,16 @@
 		83E8650429F6358300335FF8 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 83E8650329F6358300335FF8 /* GoogleSignIn */; };
 		83E8650629F6358300335FF8 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 83E8650529F6358300335FF8 /* GoogleSignInSwift */; };
 		83E8650C29F63FD400335FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83E8650B29F63FD400335FF8 /* GoogleService-Info.plist */; };
+		83E8651429F8C41600335FF8 /* HowMercariWorksCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8651329F8C41600335FF8 /* HowMercariWorksCards.swift */; };
+		83E8651829F925FD00335FF8 /* HowMercariWorksCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8651729F925FD00335FF8 /* HowMercariWorksCardsModel.swift */; };
+		83E8651A29F9549E00335FF8 /* EarningMoneyIsEasyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E8651929F9549E00335FF8 /* EarningMoneyIsEasyView.swift */; };
+		83EB11F02A01E41B00D0F32E /* LikeOrSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EB11EF2A01E41B00D0F32E /* LikeOrSearchView.swift */; };
+		83EB11F22A0216C000D0F32E /* CustomTabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EB11F12A0216C000D0F32E /* CustomTabViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8300A0022978C3CF003D2F2B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8300A0042978F6E0003D2F2B /* DeliveryAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressView.swift; sourceTree = "<group>"; };
-		8300A0062979C174003D2F2B /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
-		8300A0082979C1A2003D2F2B /* SignInWithApple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		8300A00A2979C258003D2F2B /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		8300A00C297ADEB3003D2F2B /* SearchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingView.swift; sourceTree = "<group>"; };
 		8300A011297B352C003D2F2B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -85,7 +87,8 @@
 		83A21E0A29845532005988BD /* RecommendedItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedItemsModel.swift; sourceTree = "<group>"; };
 		83A21E0D29845575005988BD /* LimitedTimeItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedTimeItemsModel.swift; sourceTree = "<group>"; };
 		83CC580F29F397D10038DA36 /* SignInEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewModel.swift; sourceTree = "<group>"; };
-		83DED4D6297DAFB1002A4827 /* CacheBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheBootcamp.swift; sourceTree = "<group>"; };
+		83DD90E029FEBE1E00490586 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		83DD90E42A00ADD900490586 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		83DED4D8297DC31D002A4827 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		83DED4DC297F2F4C002A4827 /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		83DED4DE297F308B002A4827 /* ShopLocalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLocalView.swift; sourceTree = "<group>"; };
@@ -97,6 +100,12 @@
 		83E8650029F62AD900335FF8 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		83E8650A29F63A7B00335FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83E8650B29F63FD400335FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		83E8651029F6DBAF00335FF8 /* MercariClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MercariClone.entitlements; sourceTree = "<group>"; };
+		83E8651329F8C41600335FF8 /* HowMercariWorksCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMercariWorksCards.swift; sourceTree = "<group>"; };
+		83E8651729F925FD00335FF8 /* HowMercariWorksCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMercariWorksCardsModel.swift; sourceTree = "<group>"; };
+		83E8651929F9549E00335FF8 /* EarningMoneyIsEasyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningMoneyIsEasyView.swift; sourceTree = "<group>"; };
+		83EB11EF2A01E41B00D0F32E /* LikeOrSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeOrSearchView.swift; sourceTree = "<group>"; };
+		83EB11F12A0216C000D0F32E /* CustomTabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +143,6 @@
 				83E8650E29F67B5800335FF8 /* Sell Screen */,
 				83E8650F29F67B6400335FF8 /* Inbox Screen */,
 				83E864F429F52ED300335FF8 /* Profile Screen */,
-				83DED4D8297DC31D002A4827 /* CartView.swift */,
 				83A21E0429830F28005988BD /* Onboarding Screen */,
 			);
 			path = Screens;
@@ -145,10 +153,11 @@
 			children = (
 				8300A00A2979C258003D2F2B /* CustomTextView.swift */,
 				83A21E0229830EC9005988BD /* CustomNavBackButton.swift */,
-				8300A0062979C174003D2F2B /* SignInWithAppleButtonCustom.swift */,
 				8344AAB7298C1A770067EE98 /* SaleType.swift */,
-				8344AAB9298C301A0067EE98 /* CapsuleGridView.swift */,
-				836100BA29E986E80030F660 /* CurveLine.swift */,
+				83DD90E029FEBE1E00490586 /* SearchBar.swift */,
+				8300A00C297ADEB3003D2F2B /* SearchingView.swift */,
+				83DD90E42A00ADD900490586 /* ButtonStyles.swift */,
+				83EB11F12A0216C000D0F32E /* CustomTabViews.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -172,14 +181,13 @@
 		8373F30C29762E6800CE97B8 /* MercariClone */ = {
 			isa = PBXGroup;
 			children = (
+				83E8651029F6DBAF00335FF8 /* MercariClone.entitlements */,
 				83E8650B29F63FD400335FF8 /* GoogleService-Info.plist */,
 				83E8650A29F63A7B00335FF8 /* Info.plist */,
 				83A21E0C29845540005988BD /* Models */,
 				8300A00E297B3359003D2F2B /* Views */,
 				83A21E0929845509005988BD /* Viewmodels */,
-				8300A0082979C1A2003D2F2B /* SignInWithApple.swift */,
 				83A21DF82980BBA1005988BD /* Utilities.swift */,
-				83DED4D6297DAFB1002A4827 /* CacheBootcamp.swift */,
 				8373F31129762E6A00CE97B8 /* Assets.xcassets */,
 				8373F31329762E6A00CE97B8 /* Preview Content */,
 			);
@@ -202,7 +210,7 @@
 				83DED4DC297F2F4C002A4827 /* ForYouView.swift */,
 				83DED4DE297F308B002A4827 /* ShopLocalView.swift */,
 				8300A0042978F6E0003D2F2B /* DeliveryAddressView.swift */,
-				8300A00C297ADEB3003D2F2B /* SearchingView.swift */,
+				83DED4D8297DC31D002A4827 /* CartView.swift */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 				83E864FB29F62A5600335FF8 /* Authentication */,
 				83A21E0A29845532005988BD /* RecommendedItemsModel.swift */,
 				83A21E0D29845575005988BD /* LimitedTimeItemsModel.swift */,
+				83E8651729F925FD00335FF8 /* HowMercariWorksCardsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				8300A011297B352C003D2F2B /* FavoritesView.swift */,
+				83EB11EF2A01E41B00D0F32E /* LikeOrSearchView.swift */,
 			);
 			path = "Favorites Screen";
 			sourceTree = "<group>";
@@ -271,6 +281,10 @@
 			isa = PBXGroup;
 			children = (
 				83A21DFA2981B2F1005988BD /* SellView.swift */,
+				8344AAB9298C301A0067EE98 /* CapsuleGridView.swift */,
+				83E8651329F8C41600335FF8 /* HowMercariWorksCards.swift */,
+				83E8651929F9549E00335FF8 /* EarningMoneyIsEasyView.swift */,
+				836100BA29E986E80030F660 /* CurveLine.swift */,
 			);
 			path = "Sell Screen";
 			sourceTree = "<group>";
@@ -365,7 +379,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E8651A29F9549E00335FF8 /* EarningMoneyIsEasyView.swift in Sources */,
 				83E8650129F62AD900335FF8 /* AuthenticationViewModel.swift in Sources */,
+				83E8651429F8C41600335FF8 /* HowMercariWorksCards.swift in Sources */,
 				83A21E0E29845575005988BD /* LimitedTimeItemsModel.swift in Sources */,
 				8373F31C29762EA400CE97B8 /* HomeView.swift in Sources */,
 				83A21E012982DBA8005988BD /* EmailSMSSignUpView.swift in Sources */,
@@ -376,15 +392,18 @@
 				83E864F829F52F9900335FF8 /* SellerBadgeItems.swift in Sources */,
 				83A21E0B29845532005988BD /* RecommendedItemsModel.swift in Sources */,
 				8300A00B2979C258003D2F2B /* CustomTextView.swift in Sources */,
+				83DD90E52A00ADD900490586 /* ButtonStyles.swift in Sources */,
 				83E864F629F52F1F00335FF8 /* ProfileNavigations.swift in Sources */,
+				83EB11F22A0216C000D0F32E /* CustomTabViews.swift in Sources */,
 				8344AABA298C301A0067EE98 /* CapsuleGridView.swift in Sources */,
+				83DD90E129FEBE1E00490586 /* SearchBar.swift in Sources */,
 				8300A012297B352C003D2F2B /* FavoritesView.swift in Sources */,
 				8373F31029762E6800CE97B8 /* ContentView.swift in Sources */,
 				83A21DFD2981B2F9005988BD /* InboxView.swift in Sources */,
 				83A21DF42980B4A7005988BD /* ForYouShopLocalTabsView.swift in Sources */,
-				83DED4D7297DAFB1002A4827 /* CacheBootcamp.swift in Sources */,
 				83DED4D9297DC31D002A4827 /* CartView.swift in Sources */,
 				83DED4DD297F2F4C002A4827 /* ForYouView.swift in Sources */,
+				83EB11F02A01E41B00D0F32E /* LikeOrSearchView.swift in Sources */,
 				83E864FE29F62A6D00335FF8 /* SignInAppleHelper.swift in Sources */,
 				83A21E08298454EF005988BD /* RecommenedViewModel.swift in Sources */,
 				83A21DF92980BBA1005988BD /* Utilities.swift in Sources */,
@@ -393,15 +412,14 @@
 				8300A00D297ADEB3003D2F2B /* SearchingView.swift in Sources */,
 				83CC581029F397D10038DA36 /* SignInEmailViewModel.swift in Sources */,
 				83A21DFB2981B2F1005988BD /* SellView.swift in Sources */,
-				8300A0072979C175003D2F2B /* SignInWithAppleButtonCustom.swift in Sources */,
 				83DED4DF297F308B002A4827 /* ShopLocalView.swift in Sources */,
 				8373F30E29762E6800CE97B8 /* MercariCloneApp.swift in Sources */,
 				83A21E0329830EC9005988BD /* CustomNavBackButton.swift in Sources */,
 				8300A0052978F6E0003D2F2B /* DeliveryAddressView.swift in Sources */,
 				83366E9829E84B4A00BDA00B /* MakePasswordView.swift in Sources */,
 				83366E9629E83BFE00BDA00B /* AppStateManager.swift in Sources */,
-				8300A0092979C1A2003D2F2B /* SignInWithApple.swift in Sources */,
 				836100BB29E986E80030F660 /* CurveLine.swift in Sources */,
+				83E8651829F925FD00335FF8 /* HowMercariWorksCardsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MercariClone/MercariClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MercariClone/Preview Content\"";
@@ -557,6 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MercariClone/MercariClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MercariClone/Preview Content\"";

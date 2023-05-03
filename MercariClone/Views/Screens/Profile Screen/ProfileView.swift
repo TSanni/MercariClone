@@ -40,14 +40,14 @@ struct ProfileView: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
-
+                    
                 } label: {
                     Image(systemName: "square.and.arrow.up")
                         .foregroundColor(.black)
                 }
 
                 Button {
-
+                    
                 } label: {
                     Image(systemName: "questionmark.bubble")
                         .foregroundColor(.black)
@@ -61,10 +61,13 @@ struct ProfileView: View {
 //MARK: - Preivew
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+//        NavigationView {
             ProfileView()
                 .environmentObject(AppStateManager())
-        }
+                .environmentObject(SignInEmailViewModel())
+                .preferredColorScheme(.light)
+//        }
+        .tint(.black)
     }
 }
 
@@ -140,7 +143,6 @@ extension ProfileView {
                 .foregroundColor(.white)
                 .shadow(radius: 7)
                 .frame(maxWidth: .infinity)
-                .frame(height: 170)
             
             VStack {
                 HStack {
@@ -150,7 +152,6 @@ extension ProfileView {
                     Image(systemName: "xmark")
                 }
                 .font(.title3)
-                .padding()
                 
                 HStack(spacing: 2) {
                     RoundedRectangle(cornerRadius: 0)
@@ -179,13 +180,12 @@ extension ProfileView {
                         .offset(x: 10)
                     }
                 }
-                .padding([.horizontal])
                 
                 Text("So others know it's really you.")
                     .font(.subheadline)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
             }
+            .padding()
             
         }
         .padding()
@@ -201,12 +201,12 @@ extension ProfileView {
             Image(systemName: "chevron.right")
                 .foregroundColor(.gray)
         }
-        .font(.title3)
+        .font(.headline)
         .foregroundColor(.mercariPurple)
-        .fontWeight(.bold)
-        .padding(.vertical, 15)
+        .fontWeight(.semibold)
+        .padding(.vertical, 25)
         .padding(.trailing)
-        .background(Color.mercariPurple.opacity(0.15))
+        .background(Color.mercariPurple.opacity(0.1))
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
@@ -215,8 +215,7 @@ extension ProfileView {
             ProfileNavigations(image: "tag", name: "My listings", rotation: 270, chosenNavigation: .toListings)
             ProfileNavigations(image: "bag", name: "My purchases", rotation: 0, chosenNavigation: .toPurchases)
             ProfileNavigations(image: "gear", name: "Settings", rotation: 0, chosenNavigation: .toSettings)
-                .environmentObject(signInUpViewModel)
-                .environmentObject(appState)
+
             ProfileNavigations(image: "questionmark.circle", name: "Help Center", rotation: 0, chosenNavigation: .toHelpCenter)
             
         }

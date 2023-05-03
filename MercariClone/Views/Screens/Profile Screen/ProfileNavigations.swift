@@ -16,7 +16,6 @@ struct ProfileNavigations: View {
     
     var body: some View {
         
-        
         NavigationLink {
             switch chosenNavigation {
                 case .toListings:
@@ -31,13 +30,12 @@ struct ProfileNavigations: View {
         } label: {
             VStack {
                 HStack {
-                    
                     Image(systemName: image)
                         .rotationEffect(Angle.degrees(rotation))
                     
                     Text(name)
                 }
-                .font(.title3)
+                .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(10)
                 
@@ -54,6 +52,9 @@ struct ProfileNavigations: View {
 
 struct ProfileNavigations_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileNavigations(image: "house", name: "Tom", rotation: 0, chosenNavigation: .toListings)
+        NavigationView {
+            ProfileNavigations(image: "gear", name: "Settings", rotation: 0, chosenNavigation: .toSettings)
+        }
+        .tint(.black)
     }
 }

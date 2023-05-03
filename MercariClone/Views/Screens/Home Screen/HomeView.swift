@@ -15,6 +15,7 @@ struct HomeView: View {
 
     @State private var searchText: String = ""
     @State private var tagGeometryEffect = 1
+    @State private var showFirstTab = true
     
     @FocusState private var searchInFocus: Bool
     @State private var showSearchScreen = false
@@ -107,17 +108,22 @@ struct HomeView: View {
         
         VStack {
             
-            searchbarAndCartButton.padding(.horizontal)
-                .onTapGesture {
-                    withAnimation {
-                        showSearchScreen = true
-                    }
-                }
+            SearchBar(usingCart: true, showSearchScreen: $showSearchScreen, searchtext: $searchText, focus: _searchInFocus)
+                .padding(.top)
+            
+            
+//            searchbarAndCartButton.padding(.horizontal)
+//                .onTapGesture {
+//                    withAnimation {
+//                        showSearchScreen = true
+//                    }
+//                }
             
             if !showSearchScreen {
-                ForYouShopLocalTabsView(tagGeometryEffect: $tagGeometryEffect)
+//                ForYouShopLocalTabsView(tagGeometryEffect: $tagGeometryEffect)
+                CustomTabViews(tab1Name: "For you", tab2Name: "Shop Local", showFirstTab: $showFirstTab)
                 
-                if tagGeometryEffect == 1 {
+                if showFirstTab {
                     ForYouView()
                         .transition(.move(edge: .leading))
                 } else {
@@ -130,14 +136,9 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .onAppear { searchInFocus = true }
             }
-
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .animation(.easeInOut(duration: 0.2), value: searchInFocus)
-//        .fullScreenCover(isPresented: $appState.showFullScreenCover) {
-//            OnboardingView()
-//        }
-
         
     }
     
@@ -149,21 +150,26 @@ struct HomeView_Previews: PreviewProvider {
             .previewDevice("iPhone 11 Pro Max")
             .environmentObject(RecommendedViewMdel())
             .environmentObject(AppStateManager())
+            .preferredColorScheme(.light)
         HomeView()
             .previewDevice("iPhone 13 Pro Max")
             .environmentObject(RecommendedViewMdel())
             .environmentObject(AppStateManager())
+            .preferredColorScheme(.light)
+
 
         HomeView()
             .previewDevice("iPad Pro (12.9-inch) (6th generation)")
             .environmentObject(RecommendedViewMdel())
             .environmentObject(AppStateManager())
+            .preferredColorScheme(.light)
+
 
         HomeView()
             .previewDevice("iPhone SE (3rd generation)")
             .environmentObject(RecommendedViewMdel())
             .environmentObject(AppStateManager())
-
+            .preferredColorScheme(.light)
 
     }
 }
